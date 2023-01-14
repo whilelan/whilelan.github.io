@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>曲库</title>
+        <meta charset="UTF-8">
+		<link href="css/qukuMain.css" rel="stylesheet" type="text/css">
+		<link href="static/css/styles.css" rel="stylesheet">
+		<link href="static/css/index.css" rel="stylesheet">
+ 		<link href="static/css/color_css.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/knobKnob.css" />
+        		<script type="text/javascript" src="js/modernizr.custom.69142.js"></script> 
+		<script>
+		function shuoming(){
+			alert("可以直接返回上一个页面，在上方的网页窗口选择中。这样就可以实现歌曲后台自动播放了。");
+		}
+		</script>
+    </head>
+    <body background="img/background2.jpg" style="background-size: cover;" onLoad="shuoming()">
+       <!-- Menu -->
+        <nav id="tmNav" class="tm-nav">
+			<li><h1><a class="tm-navbar-menu" href="#"><strong>菜单</strong></a></li></h1>
+          <ul class="tm-nav-links">
+            <li class="tm-nav-item active"> <a href="Main.html" data-linkid="0" data-align="right" class="tm-nav-link"><strong>主页</strong></a> </li>
+            <li class="tm-nav-item"> <a href="#"data-linkid="1" data-align="right" class="tm-nav-link"><strong>博客</strong></a> </li>
+            <li class="tm-nav-item"> <a href="Songs.html" data-linkid="2" data-align="middle" class="tm-nav-link"><strong>曲库</strong></a> </li>
+            <li class="tm-nav-item"> <a href="#" data-linkid="3" data-align="left" class="tm-nav-link">个人空间</a> </li>
+          </ul>
+        </nav>
+
+    <div class="second-div">
+    
+	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+    
+        <div class="container">
+		
+			
+			<header>
+
+				<div class="support-note"><!-- let's check browser support with modernizr -->
+					<span class="no-cssanimations">CSS animations are not supported in your browser</span>
+					<span class="no-csstransforms">CSS transforms are not supported in your browser</span>
+					<span class="no-csstransforms3d">CSS 3D transforms are not supported in your browser</span>
+					<span class="no-csstransitions">CSS transitions are not supported in your browser</span>
+					<span class="note-ie">Sorry, only modern browsers.</span>
+				</div>
+				
+			</header>
+
+			<div id="vc-container" class="vc-container">
+				<div class="vc-tape-wrapper">
+					<div class="vc-tape">
+						<div class="vc-tape-back">
+							<div class="vc-tape-wheel vc-tape-wheel-left"><div></div></div>
+							<div class="vc-tape-wheel vc-tape-wheel-right"><div></div></div>
+						</div>
+						<div class="vc-tape-front vc-tape-side-a">
+							<span>A</span>
+						</div>
+						<div class="vc-tape-front vc-tape-side-b">
+							<span>B</span>
+						</div>
+					</div>
+				</div>
+				<div class="vc-loader"></div>
+			</div><!-- //vc-container -->
+
+		</div><!-- //container -->
+			
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<!-- KnobKnob by Martin Angelov : https://github.com/martinaglv/KnobKnob -->
+		<script src="js/transform.js"></script>
+		<script src="js/knobKnob.jquery.js"></script>
+
+		<script type="text/javascript" src="js/jquery.cassette.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+				
+				$( '#vc-container' ).cassette();
+						
+				});
+		</script>
+		</div>
+			
+    </body>
+</html>

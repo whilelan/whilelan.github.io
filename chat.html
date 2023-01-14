@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="default ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no shrink-to-fit=no">
+    <title>Chat - 连接世界</title>
+        <title>MChat</title>
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/css/index.css" rel="stylesheet">
+        <link href="static/css/color_css.css" rel="stylesheet">      
+</head>
+<body>
+    <div id="layoutDefault">
+        <div id="layoutDefault_content">
+            <main>
+                <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-dark fixed-top ">
+                    <div class="container">
+                        <a class="navbar-brand text-white logo" href="">
+               			<img class="mr-2 large" src="img/logo/logo.png">
+                      <img class="mr-2 small" src="static/picture/621f0cd9712ec1.37312565_gqienlkjompfh.png">
+                                                    </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu" class="fa fa-bars"></i></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto mr-lg-5">
+                                <li class="nav-item "><a class="nav-link" href="Main.html">首页</a></li>
+                                <li class="nav-item "><a class="nav-link" href="blog.html">博客</a></li>
+                               <li class="nav-item "><a class="nav-link" href="Songs.html">曲库</a></li>
+                               <li class="nav-item">
+                                    <div class="dropdown lang-selector">
+                                        <button class="btn btn-sm btn-lang dropdown-toggle" type="button" id="langSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span id="selected-lang-toggle"><span class="flag-icon flag-icon-cn"></span> 中文</span>
+                                        </button>
+                                        <div class="dropdown-menu scrollable-menu" aria-labelledby="langSelector">
+                                         <a class="dropdown-item " href="javascript:;">
+                                                    <span class="flag-icon flag-icon-us"></span> English
+                                                </a>
+                                         <a class="dropdown-item " href="javascript:;">
+                                                    <span class="flag-icon flag-icon-cn"></span> 中文
+                                                </a>
+                                         </div>
+                                    </div>
+                                </li>
+                                                                                            </ul>
+                    <a class="btn-teal btn px-4 ml-lg-4" href="javascript:;">登录<i class="fas fa-arrow-right ml-1"></i></a>
+                                                    </div>
+                    </div>
+                </nav>
+                                <header class="page-header page-header-dark bg-gradient-primary-to-secondary bgimg">
+                    <div class="page-header-content pt-2">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6" data-aos="fade-up">
+                                    <h1 class="page-header-title">让我们开始联系！</h1>
+                                    <p class="page-header-text mb-5 mt-4">
+                                                                                   享受生活，分享感动。
+                                                                            </p>
+                                                                    </div>
+                                <div class="col-lg-6 home-img-col" data-aos="fade-up" data-aos-delay="50">
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                                <section class="bg-white py-5 main-content ">
+    <div class="container">
+        <span class="chat-list-header">
+                            <h2 class="text-center mb-2">聊天室</h2>
+            
+                            <p class="text-center mb-5">您可以创建自己的专属聊天室</p>
+            
+        </span>
+        <div class="row">
+            <div class="col">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" checked="" class="custom-control-input room-choice" value='0' id="allrooms" name="room-choice">
+                  <label class="custom-control-label" for="allrooms">所有房间</label>
+                </div>
+                
+            </div>
+            <div class="col ml-auto room-sort">
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-sort"></i></span>
+                  </div>
+                  <select class="form-control form-control-sm room-sort-select" name="">
+                      <option value="most_users_first" selected="">最多用户</option>
+                      <option value="least_users_first">最少用户</option>
+                      <option value="newest_first">最新房间</option>
+                      <option value="oldest_first">最早房间</option>
+                  </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-5">
+                    <input type="text" class="form-control small" id="search_chatroom" placeholder="搜索聊天室..." aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" id="clear_search" type="button">
+                            <i class="fas fa-times fa-sm"></i>
+                        </button>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="search_chatroom_btn" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- chat room loop -->
+        <div class="row" id="chat-room-loop">
+                            
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-3 {
+                                background-image: url('static/image/group.png');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-3"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">HostLoc
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="全球主机交流">
+                                全球主机交流
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">183</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-1 {
+                                background-image: url('static/image/62201e39636be7.64040800_gjmqoinpelhfk.jpeg');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-1"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">MoeChat大厅
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="与所有人进行交流">
+                                与所有人进行交流
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">94</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-9 {
+                                background-image: url('static/image/group.png');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-9"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">DFC-chat02
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="DFC聊天室02">
+                                DFC聊天室02
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">9</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-10 {
+                                background-image: url('static/image/637b1e6e8adfa3.39006294_mqolnghkjiefp.png');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-10"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">科技神王
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="喜欢以多欺少，看我坚毅不倒">
+                                喜欢以多欺少，看我坚毅不倒
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">6</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-5 {
+                                background-image: url('static/image/group.png');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-5"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">三体的同志们～
+                                                            <i data-toggle="tooltip" data-placement="top" title="密码保护的聊天室" class="fas fa-user-lock"></i>
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="无">
+                                无
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">6</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                            <i class="fas fa-lock"></i>
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 mx-auto sml">
+
+        <div class="card mb-3 sml mt-1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <style media="screen">
+                                                    .card-sml-17 {
+                                background-image: url('static/image/group.png');
+                            }
+                                            </style>
+                    <div class="card-sml card-sml-17"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h5 class="card-title">子墨的小窝
+                                                            <i data-toggle="tooltip" data-placement="top" title="密码保护的聊天室" class="fas fa-user-lock"></i>
+                                                                                                                                                                    </h5>
+                    </div>
+                    <div class="card-body">
+                                                    <p class="card-text" data-toggle="tooltip" data-placement="top" title="子墨和小伙伴们的基地">
+                                子墨和小伙伴们的基地
+                            </p>
+                                            </div>
+                    <div class="card-footer">
+                        <div class="row align-items-end">
+                            <div class="col-5">
+                                <div class="number">6</div>
+                                <h3 class="number-title">人</h3>
+                            </div>
+                            <div class="col-7">
+                                <div class="buttons-wrap">
+                                    <div class="join-wrap">
+                                        
+                                        <a href="javascript:;" class="join">加入聊天室
+                                                                                            <i class="fas fa-lock"></i>
+                                                                                    </a>
+                                                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    </div>
+        <input type="hidden" id="chat_room_cont" value="6">
+        <div class="row justify-content-md-center mb-5 mt-5">
+            <div class="col-md-3 text-center">
+                <div id="load-more-end" class="hidden">已经没有更多了！</div>
+                <a href="javascript:void(0)" class="btn btn-sm btn-success" id="load-more">加载更多 <i class="hidden fas fa-spinner fa-spin"></i> </a>
+            </div>
+        </div>
+    </div>
+</section>
+            </main>
+        </div>
+        <div class="modal fade rooms-modal" tabindex="-1" role="dialog" aria-labelledby="roomsModel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul class="nav nav-pills mb2">
+        <li class="nav-item">
+        <a class="nav-link active" id="room-users-tab" data-toggle="pill" href="#room-users" role="tab" aria-controls="room-users" aria-selected="false"><i class="fas fa-users"></i> 成员</a>
+    </li>
+
+</ul>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="button" data-id="0" class="btn btn-warning deactivate-user">停用</button>
+                                            </div>
+        </div>
+    </div>
+</div>
+                <div id="layoutDefault_footer">
+            <footer class="footer pt-3 pb-3  bg-light footer-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 small">2022 needChat </div>
+                        <div class="col-md-6 text-md-right small">
+                                                        <a href="javascript:;">关于我们</a>
+                       <a href="javascript:;">联系我们</a>
+                   <a href="javascript:;">隐私政策</a>
+               <a href="javascript:;">用户协议</a>
+                                                    </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+     <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/index_js.js"></script>
+</body>
+</html>

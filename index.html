@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+
+
+<meta name="description" content="小兰的博客么">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>LanB</title>
+<link href="static/css/BlogMain.css" rel="stylesheet" type="text/css">
+<link href="static/css/css.css" rel="stylesheet">
+<link href="static/css/theme-plugin.css" rel="stylesheet">
+<link href="static/css/fonts1.css" rel="stylesheet">
+<link href="static/css/theme.min.css" rel="stylesheet">
+
+<style>
+      * {
+        font-family: -apple-system,"SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC",Nunito Sans;
+      }
+
+      .title-text {
+        font-family: 'Visby Heavy';
+        background: linear-gradient(26deg, #ffd89b, #19547b);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+    </style>
+</head>
+<body class="bg-dark">
+
+<div class="page-wrapper">
+
+<div id="ht-preloader">
+<div class="loader clear-loader">
+<span></span>
+<p>LAN@Blog</p>
+</div>
+</div>
+
+
+<header class="site-header navbar-dark">
+<div id="header-wrap" class="position-absolute w-100 z-index-1">
+<div class="container">
+<div class="row">
+
+<div class="col d-flex align-items-center justify-content-between">
+<a class="navbar-brand logo text-white h2 mb-0" href="#">
+<img style="width: 90px;" src="img/logo/blog(已去底).png" alt="Lan@Blog">
+</a>
+<nav class="navbar navbar-expand-lg ml-auto navbar-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item dropdown">
+<a class="nav-link active" href="#">主页</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" href="login.html">登录</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" href="register.html">注册</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+
+</div>
+</div>
+</div>
+</header>
+
+
+<section class="custom-pt-1 custom-pb-2 position-relative bg-primary">
+<div class="container">
+<div class="row justify-content-center text-center">
+<div class="col-12 col-lg-10">
+
+<h4 class="title-text title-text">
+<span class="text-daziji"></span>
+<script>
+           <!-- 获取.text标签 -->
+        const text = document.querySelector('.text-daziji');
+         <!-- 定义数组，里面放上文本 -->
+        const txt  =["沉在盒子里的是你。","给我的快乐。","我很想记得可是我记不得。"]; 
+        <!-- 定义当前要显示的字符串的第几个字符 -->
+        var index=0;
+        <!-- 定义文本数组的下标 -->
+        var xiaBiao= 0;
+        <!-- 定义huan，拿来判断是要实现打字还是删除字效果，初始为真 -->
+        var huan = true;
+     <!-- 定义一个定时器，200毫秒执行一次 -->
+        setInterval(function(){
+           <!-- huan为真 -->
+            if(huan){             
+                <!-- 给.text标签添加字符，用.slice方法 --> 
+                text.innerHTML = txt[xiaBiao].slice(0,++index);
+            }
+            else{
+              <!-- 给.text标签删除字符，用.slice方法 --> 
+                text.innerHTML = txt[xiaBiao].slice(0,index--);
+            }
+            
+            <!-- 判断当前index是否为当前字符串长度了+3了 ，+3是为了打完后多等会，多走3个啥也不做的轮回-->
+            if(index==txt[xiaBiao].length+3)
+            {
+            <!-- huan变为假，开始执行删除文字效果 -->
+                huan = false;
+            }
+            <!-- 如果删完了 -->
+            else if(index<0)
+            {   
+            <!-- index=0，huan为真，从头开始打字 -->
+                index = 0;
+                huan = true;
+                <!-- 数组下标加1 -->
+                xiaBiao++;
+                if(xiaBiao>=txt.length)
+                {   
+                <!-- 如果数组下标超过了，又回到0 -->
+                    xiaBiao=0; 
+                }
+            }
+
+        },200)
+
+    </script>
+	<span style="font-size:1.2em;vertical-align:middle;" class="cursor" data-cursordisplay="|" data-owner="some-id"></span>
+</h4>
+<h1 class="display-1 mt-3 font-w-8 title-text">小兰的博客<br>WE NEED BLOG </h1>
+
+<p class="lead text-light">
+<br>
+<br>
+</p>
+</div>
+</div>
+
+<div class="row text-center">
+<div class="col-12 ">
+<div class="owl-carousel mt-8 no-pb" data-dots="false" data-items="6" data-md-items="5" data-sm-items="3" data-xs-items="2" data-margin="30" data-autoplay="true">
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/ChatBubbleLeftRight.svg" alt="" title="进入聊天室">
+</div>
+</div>
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/Envelope.svg" alt="" title="给小兰留言">
+</div>
+</div>
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/Radio.svg" alt="" title="音乐厅">
+</div>
+</div>
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/Window.svg" alt="" title="博客">
+</div>
+</div>
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/Camera.svg" alt="照片墙">
+</div>
+</div>
+<div class="item">
+<div class="clients-logo">
+<img class="img-fluid" src="svg/CodeBracketSquare.svg" alt="" title="代码存储室">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="shape-1 bottom" style="height: 200px; overflow: hidden;">
+<svg viewbox="0 0 500 150" preserveaspectratio="none" style="height: 100%; width: 100%;">
+<path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #000;"></path>
+</svg>
+</div>
+</section>
+
+
+<div class="page-content">
+
+<section class="pt-0">
+<div class="container">
+<div class="row align-items-end">
+<div class="col-lg-4 col-md-6">
+<div>
+<div class="d-flex align-items-center mb-4">
+<h5 class="m-0 text-light">关于注册</h5>
+</div>
+<p class="mb-0">点击注册以后，给小兰发送消息，小兰会给你开通访问权限。</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mt-6 mt-md-0">
+<div>
+<div class="d-flex align-items-center mb-4">
+<h5 class="m-0 text-light">关于内容</h5>
+</div>
+<p class="mb-0">预计会包括以下功能<br>聊天，代码储存，博客文章，音乐歌单分享。</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mt-6" style="padding-bottom: 3px;">
+<div>
+<div class="d-flex align-items-center mb-4">
+<h5 class="m-0 text-light">关于</h5>
+</div>
+<p class="mb-0">私人网站，如需要源码直接扒。请不要打扰。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section>
+<div class="container">
+<div class="row justify-content-center text-center">
+<div class="col-12 col-md-12 col-lg-8 mb-8 mb-lg-0">
+<div class="mb-8">
+
+<h2 class="mt-4 text-white font-w-6">小兰推荐的文章</h2>
+</div>
+</div>
+</div>
+<div class="row align-items-center">
+<div class="col-12">
+ <div class="row align-items-center">
+<div class="col-12 col-lg-4 mb-8 mb-lg-0">
+
+<div class="card bg-transparent border-0 hover-translate">
+
+<div class="card-body py-11 px-6">
+
+<div class="text-center mb-5">
+<span class="badge badge-light shadow">
+<span class="h6 text">HTML打字机效果</span>
+</span>
+</div>
+
+<div class="d-flex justify-content-center text-white">
+<span class="align-self-end mb-1"><img src="img/gif/HTML打字机效果.gif" style="width: 100%;" alt=""></span>
+</div>
+
+<p class="text-center text-muted mb-6 mb-md-8">实例演示</p>
+
+<div class="d-flex align-items-start justify-content-between">
+
+<p>利用js实现，先定义一个数组，在里面放上你想展示的文本。在css中需要设计一个光标，这个光标的闪烁效果，是可以通过添加动画来设置成的。</p>
+
+</div>
+<a href="register.html" target="_blank" class="btn btn-block btn-primary mt-5"> 点击阅读 </a>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4 mb-8 mb-lg-0">
+
+<div class="card shadow bg-primary border-0 hover-translate">
+
+<div class="card-body py-11 px-6">
+
+<div class="text-center mb-5">
+<span class="badge badge-light">
+<span class="h6 text">古典收音机</span>
+</span>
+</div>
+
+<div class="d-flex justify-content-center text-white">
+<span class="align-self-end mb-1"><img src="img/index/古典收音机.png" style="width: 100%;" alt=""></span>
+</div>
+
+<p class="text-center text-muted mb-6 mb-md-8">实例演示</p>
+
+<div class="d-flex align-items-start justify-content-between">
+
+<p>利用js实现，具体是通过按钮来控制音乐的播放和暂停。完整代码如下：</p>
+
+</div>
+
+
+<a href="register.html" target="_blank" class="btn btn-block btn-dark mt-5"> 点击阅读 </a>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4">
+
+<div class="card bg-transparent border-0 hover-translate">
+
+<div class="card-body py-11 px-6">
+
+<div class="text-center mb-5">
+<span class="badge badge-light shadow">
+<span class="h6 text">歌单分享</span>
+</span>
+</div>
+
+<div class="d-flex justify-content-center text-white">
+<span class="h2 align-self-end mb-1"><ul>
+	<li>园游会</li>
+	<li>晴天</li>
+	<li>想牵着你的手</li>
+	</ul></span>
+</div>
+
+<p class="text-center text-muted mb-6 mb-md-8"></p>
+
+<div class="d-flex align-items-start justify-content-between">
+<p>小兰喜欢听杰伦和许嵩的歌曲，所以歌单主要是这两个人的，而且大部分都是甜甜的情歌。希望你也喜欢</p>
+</div>
+
+
+<a href="register.html" target="_blank" class="btn btn-block btn-primary mt-5"> 点击阅读 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<footer class="py-1 bg-primary position-relative">
+<div class="container mt-11">
+<div class="row">
+<div class="col-12 col-lg-6 col-xl-7">
+<div class="row">
+<div class="col-12 col-sm-4 mt-6 mt-sm-0 navbar-dark">
+<h5 class="mb-4 text-white">服务</h5>
+<ul class="navbar-nav list-unstyled mb-0">
+<li class="mb-3 nav-item">
+<a class="#" href="register.html">申请注册</a>
+</li>
+<li class="mb-3 nav-item">
+<a class="nav-link" href="javascript:;" target="_blank"></a>
+</li>
+
+</ul>
+</div>
+<div class="col-12 col-sm-4 mt-6 mt-sm-0 navbar-dark">
+<h5 class="mb-4 text-white">其他</h5>
+<ul class="navbar-nav list-unstyled mb-0">
+<li class="mb-3 nav-item">
+<a class="nav-link" href="javascript:;" target="_blank">更多博客</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href=""></a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 mt-6 mt-sm-0 navbar-dark">
+<a class="footer-logo text-white h1 mb-0" href="#">
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row text-white text-center mt-8">
+<div class="col">
+<hr class="mb-8">记录生活，分享感动。
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+
+
+<div class="scroll-top"><a class="smoothscroll" href="404.html#top"> <em class="las la-angle-up"></em> </a></div>
+<script src="static/js/theme-plugin.js" type="0297fc2ff61cc9343c2781d6-text/javascript"></script>
+<script src="static/js/theme-script.js" type="0297fc2ff61cc9343c2781d6-text/javascript"></script>
+
+<script src="static/js/rocket-loader.min.js" data-cf-settings="0297fc2ff61cc9343c2781d6-|49" defer=""></script>
+</body></html>
